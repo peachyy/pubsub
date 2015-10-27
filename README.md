@@ -1,4 +1,9 @@
 # pubsub
+
+ 项目首页
+ 
+ [http://blog.seoui.com](http://blog.seoui.com/)
+ 
 ###一个publish/subscribe的js独立库
 
 `无需依赖第3方`
