@@ -64,7 +64,7 @@
 		if(!currEvent){
 			return;//没有这个事件不执行任何操作
 		}
-		for(i,len=currEvent.length;i<len;len++){
+		for(i,len=currEvent.length;i<len;i++){
 			var where=args[1];
 			if(typeof where=='function' && currEvent[i].callback===where){
 				subs[event].splice(i,1);
@@ -106,5 +106,5 @@
 			console.log("["+t.getFullYear()+"-"+(t.getMonth()+1)+"-"+t.getDate()+" "+t.getHours()+":"+t.getMinutes()+":"+t.getSeconds()+"]\t"+v);
 		}
 	}	
-	w.[path?path:'ps']=ps;
+	w[path?path:'ps']=ps;
 }(window,undefined);

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../pubsub.js"></script>
+
+    <style type="text/css">
+            body{MARGIN:0 auto;width:980px;text-align: center;}
+            .max{margin: 0;padding: 0;height:980px;width:980px;border:1px solid #000;}
+            header{height: 15%;background-color: antiquewhite;}
+            footer{height: 15%;width: 100%;}
+            .items{width: 100%;}
+            .items .item{width: 80px;height: 80px;border: 1px solid white;position: relative;display:inline-block;float: left;margin:20px 100px 5px 5px;}
+            .items .item .item-title {font-size: 14px;position: absolute;line-height:60px;height:20px;bottom: 0px;left: 0;text-align: center;width: 100%;  }
+            .content{text-align: center;}
+            .items .item:hover{border-color: antiquewhite;}
+            .items .item .item-message{min-height: 200px;border: 1px solid gray;border-radius:10px;margin-top: 20px;}
+    </style>
+
+</head>
+<body>
+    <div class="max">
+        <header>
+
+
+        </header>
+        <section class="content">
+            <input type="text" id="input-text" value="默认消息"/>
+                <input type="button"  onclick="send();"  id="send-btn" value="点我 发信息给小伙伴"/>
+                <div class="items">
+                        <div class="item">
+                            <a id="nosub-a1"href="#" onclick="nosub(1)">不订阅了</a>
+                            <a style="display: none;" id="sub-a1" href="#" onclick="sub(1)">我要订阅</a>
+                            <img src="../images/1.gif">
+                            <div class="item-title">
+                                    小1
+                            </div>
+                            <div  id="message1" class="item-message">
+                                我收到的信息为:
+                            </div>
+                        </div>
+                    <div class="item">
+                        <a id="nosub-a2"href="#" onclick="nosub(2)">不订阅了</a>
+                        <a style="display: none;" id="sub-a2" href="#" onclick="sub(2)">我要订阅</a>
+                        <img src="../images/2.gif">
+                        <div class="item-title">
+                            小2
+                        </div>
+                        <div  id="message2"  class="item-message">
+                            我收到的信息为:
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a id="nosub-a3"href="#" onclick="nosub(3)">不订阅了</a>
+                        <a style="display: none;" id="sub-a3" href="#" onclick="sub(3)">我要订阅</a>
+                        <img src="../images/3.gif">
+                        <div class="item-title">
+                            小3
+                        </div>
+                        <div  id="message3" class="item-message">
+                            我收到的信息为:
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a id="nosub-a4"href="#" onclick="nosub(4)">不订阅了</a>
+                        <a style="display: none;" id="sub-a4" href="#" onclick="sub(4)">我要订阅</a>
+                        <img src="../images/4.gif">
+                        <div class="item-title">
+                            小4
+                        </div>
+                        <div  id="message4"  class="item-message">
+                            我收到的信息为:
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a id="nosub-a5"href="#" onclick="nosub(5)">不订阅了</a>
+                        <a style="display: none;" id="sub-a5" href="#" onclick="sub(5)">我要订阅</a>
+                        <img src="../images/5.gif">
+                        <div class="item-title">
+                            小5
+                        </div>
+                        <div  id="message5" class="item-message">
+                            我收到的信息为:
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    </div>
+</body>
+<script type="text/javascript">
+    var type="todayGo";//定义一个类型
+    ps.setDebug(true);//开启调试模式；
+    //////订阅事件开始
+    //小1
+    var t1=ps.sub(type,function(message){
+       document.getElementById("message1").innerHTML=""+message;
+    });
+    //小2
+    var t2=ps.sub(type,function(message){
+        document.getElementById("message2").innerHTML=""+message;
+    })
+    //小3
+    var t3=ps.sub(type,function(message){
+        document.getElementById("message3").innerHTML=""+message;
+    })
+    //小4
+    var t4=ps.sub(type,function(message){
+        document.getElementById("message4").innerHTML=""+message;
+    })
+    //小5
+    var t5=ps.sub(type,function(message){
+        document.getElementById("message5").innerHTML=""+message;
+    });
+    //////订阅事件结束
+
+    function nosub(t){
+        t= t.toString();
+        switch (t){
+            case '1':
+                    ps.unsub(type,t1);
+                    t1=null;
+                    document.getElementById("sub-a"+t).style.display='block';
+                    document.getElementById("nosub-a"+t).style.display='none';
+                break;
+            case '2':
+                ps.unsub(type,t2);
+                t2=null;
+                document.getElementById("sub-a"+t).style.display='block';
+                document.getElementById("nosub-a"+t).style.display='none';
+                break;
+            case '3':
+                ps.unsub(type,t3);
+                t3=null;
+                document.getElementById("sub-a"+t).style.display='block';
+                document.getElementById("nosub-a"+t).style.display='none';
+                break;
+            case '4':
+                ps.unsub(type,t4);
+                t4=null;
+                document.getElementById("sub-a"+t).style.display='block';
+                document.getElementById("nosub-a"+t).style.display='none';
+                break;
+            case '5':
+                ps.unsub(type,t5);
+                t5=null;
+                document.getElementById("sub-a"+t).style.display='block';
+                document.getElementById("nosub-a"+t).style.display='none';
+                break;
+        }
+    }
+    function sub(t){
+        t= t.toString();
+        switch (t){
+            case '1':
+                t1=ps.sub(type,function(message){
+                    console.info(message);
+                    document.getElementById("message"+t).innerHTML=""+message;
+                });
+                break;
+            case '2':
+                t2=ps.sub(type,function(message){
+                    console.info(message);
+                    document.getElementById("message"+t).innerHTML=""+message;
+                })
+                document.getElementById("sub-a"+t).style.display='none';
+                document.getElementById("nosub-a"+t).style.display='block';
+                break;
+            case '3':
+                t3=ps.sub(type,function(message){
+                    console.info(message);
+                    document.getElementById("message"+t).innerHTML=""+message;
+                });
+                document.getElementById("sub-a"+t).style.display='none';
+                document.getElementById("nosub-a"+t).style.display='block';
+                break;
+            case '4':
+                t4=ps.sub(type,function(message){
+                    console.info(message);
+                    document.getElementById("message"+t).innerHTML=""+message;
+                })
+                document.getElementById("sub-a"+t).style.display='none';
+                document.getElementById("nosub-a"+t).style.display='block';
+                break;
+            case '5':
+                t5=ps.sub(type,function(message){
+                    console.info(message);
+                    document.getElementById("message"+t).innerHTML=""+message;
+                })
+                document.getElementById("sub-a"+t).style.display='none';
+                document.getElementById("nosub-a"+t).style.display='block';
+                break;
+        }
+        document.getElementById("sub-a"+t).style.display='none';
+        document.getElementById("nosub-a"+t).style.display='block';
+    }
+    var items=document.getElementsByClassName("items");
+
+    function send(){
+       var text= document.getElementById("input-text").value;
+        var d=new Date();
+        ps.pub(type,d.getHours()+":"+ d.getMinutes()+":"+ d.getSeconds()+"\<br/>"+text);
+    }
+</script>
+</html>
