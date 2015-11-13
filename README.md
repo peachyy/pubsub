@@ -2,9 +2,16 @@
 
  项目首页
  
- [http://blog.seoui.com](http://blog.seoui.com/)
+ [http://blog.seoui.com/opensrclist/#pubsub.js](http://blog.seoui.com/opensrclist/#pubsub.js)
+
+ DEMO
+
+
+ <a href="http://peachyy.github.io/pubsub/" target="_blank">查看demo</a>
+
+
  
-###一个publish/subscribe的js独立库
+###pubsub.js是一个publish/subscribe的js独立库
 
 `无需依赖第3方`
 
@@ -13,8 +20,12 @@
 1. ps.pub     /  ps.publish     发布事件通知
 2. ps.sub    /   ps.subscribe   订阅通知
 3. ps.unsub  /   ps.unsubscribe 取消已订阅的事件通知
+4. ps.setDebug                  设置是否开启调试模式/调试模式下会输入一些操作日志
 
 ##更新日志：
 
+2015-11-13  修复针对IE8以下浏览器传递参数的问题。
+
 2015-10-28  支持自定义命名空间 但是默认为`ps`   
+
 2015-10-27  commit init
