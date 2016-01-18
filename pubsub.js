@@ -9,9 +9,9 @@
     demo:     http://peachyy.github.io/pubsub/
  * 	 一个WEB前端发布(publish) 订阅(subscribe) 的小组件 不需要第3方库的依赖
  *  * 支持像jquery一样的链式调用风格
- *  *使用ps.pub / ps.publish    发布事件通知
+ *  *使用ps.pub / ps.publish    发布通知
  *  *使用ps.sub /ps.subscribe   订阅通知
- *  *使用ps.unsub /ps.unsubscribe 取消已订阅的事件通知
+ *  *使用ps.unsub /ps.unsubscribe 取消已订阅的通知
  *   ps.setDebug()调试模式开关
  */
 
@@ -24,12 +24,12 @@
 	tokenPre="pubAndSub-";
 	swapEP();
 	/**
-	 * 广播事件
+	 * 发布通知
 	 */
 	ps.publish=ps.pub=function(){
 		var args=getArgsAsArrays(arguments);
 		if(args.length<=0){
-			throw new Error('广播事件必须要指定事件类型');
+			throw new Error('发布通知必须要指定订阅通知类型');
 		}
 		var event=args[0],calls=subs[event];
 		if(!calls){//不处理没有用户订阅的事件
@@ -44,7 +44,7 @@
 		return this;
 	}
 	/**
-	 * 订阅事件
+	 * 订阅通知
 	 */
 	ps.subscribe=ps.sub=function(event,call){
 		var a=subs[event]=subs[event]||[],
@@ -56,7 +56,7 @@
 		return instanceToken;
 	}
 	/**
-	 * 删除 第1个参数为事件名称  第2个参数可以为TOKEN/函数对象 
+	 * 删除 第1个参数为订阅通知名称  第2个参数可以为TOKEN/函数对象 
 	 * 如果是token则使用token匹配删除 
 	 * 如果是使用function函数 则匹配function函数删除
 	 */
@@ -65,7 +65,7 @@
 		args=getArgsAsArrays(arguments),
 		event=args[0],currEvent=subs[event];
 		if(!currEvent){
-			return;//没有这个事件不执行任何操作
+			return;//没有这个订阅的通知不执行任何操作
 		}
 		for(i,len=currEvent.length;i<len;i++){
 			var where=args[1];
