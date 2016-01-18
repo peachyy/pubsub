@@ -11,11 +11,12 @@
             header{height: 15%;background-color: antiquewhite;}
             footer{height: 15%;width: 100%;}
             .items{width: 100%;}
+			.items .item a{font-size:1em;}
             .items .item{width: 80px;height: 80px;border: 1px solid white;position: relative;display:inline-block;float: left;margin:20px 100px 5px 5px;}
             .items .item .item-title {font-size: 14px;position: absolute;line-height:60px;height:20px;bottom: 0px;left: 0;text-align: center;width: 100%;  }
             .content{text-align: center;}
             .items .item:hover{border-color: antiquewhite;}
-            .items .item .item-message{min-height: 200px;border: 1px solid gray;border-radius:10px;margin-top: 20px;}
+            .items .item .item-message{min-height: 200px;border: 1px solid gray;border-radius:10px;margin-top: 20px;font-size:0.5em;}
     </style>
 
 </head>
@@ -26,6 +27,7 @@
 
         </header>
         <section class="content">
+			<h3 style="color:red;">您可以在这里输入消息/please input text：</h3>
             <input type="text" id="input-text" value="默认消息"/>
                 <input type="button"  onclick="send();"  id="send-btn" value="点我 发信息给小伙伴"/>
                 <div class="items">
