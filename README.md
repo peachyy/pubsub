@@ -17,10 +17,10 @@
 
 ##API
  
-1. ps.pub     /  ps.publish     发布事件通知
+1. ps.pub     /  ps.publish     发布通知
 2. ps.sub    /   ps.subscribe   订阅通知
-3. ps.unsub  /   ps.unsubscribe 取消已订阅的事件通知
-4. ps.setDebug                  设置是否开启调试模式/调试模式下会输入一些操作日志
+3. ps.unsub  /   ps.unsubscribe 取消已订阅的通知
+4. ps.setDebug                  设置是否开启调试模式/调试模式下会输出一些操作日志
 
 ##更新日志：
 
