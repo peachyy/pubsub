@@ -2,7 +2,7 @@
 
  项目首页
  
- [http://blog.seoui.com/opensrclist/#pubsub.js](http://blog.seoui.com/opensrclist/#pubsub.js)
+ [http://peachyy.github.io/pubsub/](http://peachyy.github.io/pubsub/)
 
  DEMO
 
