@@ -2,12 +2,12 @@
 
  项目首页
  
- [http://peachyy.github.io/pubsub/](http://peachyy.github.io/pubsub/)
+ [https://peachyy.github.io/pubsub/](https://peachyy.github.io/pubsub/)
 
  DEMO
 
 
- <a href="http://peachyy.github.io/pubsub/" target="_blank">查看demo</a>
+ <a href="https://peachyy.github.io/pubsub/" target="_blank">查看demo</a>
 
 
  
